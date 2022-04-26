@@ -25,7 +25,8 @@ def login(request: HttpRequest) -> HttpResponse:
             'grade': user.child.grade,
             'parent': parent.name,
             'address': parent.address,
-            'imageUrl': user.child.imageUrl,
+            'imageUrl': user.child.imageUrl
+            or 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png',
             'phoneNo': parent.contactInfo,
             'isStaff': user.is_staff,
             'isSuperuser': user.is_superuser,
